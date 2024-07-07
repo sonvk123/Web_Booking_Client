@@ -1,0 +1,11 @@
+.HomeFooter {
+  width: 62%; 
+  display: flex;
+  margin: 0 auto;
+  padding: 24px 0;
+  gap:70px;
+  color : blue
+}
+.col_number {
+  margin-top: 24px;
+}

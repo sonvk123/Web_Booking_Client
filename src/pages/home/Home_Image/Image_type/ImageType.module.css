@@ -1,0 +1,16 @@
+.items {
+}
+.image {
+  width: 200px;
+  height: 190px;
+  border-radius: 12px;
+}
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.count {
+  font-size: 14px;
+  margin-left: 12px;
+}

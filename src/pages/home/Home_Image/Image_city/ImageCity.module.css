@@ -1,0 +1,24 @@
+.items {
+  position: relative;
+}
+
+.image {
+  width: 350px;
+  height: 300px;
+  border-radius: 12px;
+}
+.name {
+  position: absolute;
+  color: white;
+  left: 24px;
+  bottom: 60px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.subText {
+  position: absolute;
+  color: white;
+  bottom: 38px;
+  left: 24px;
+  font-size: 21px;
+}

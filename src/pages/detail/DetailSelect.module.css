@@ -1,0 +1,31 @@
+.Selecthotels {
+  width: 66%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.item h1 {
+  margin: 0;
+}
+.title{
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.Selecthotels_info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+.checkBox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.checkBox_item {
+  display: flex;
+  flex-direction: column;
+}

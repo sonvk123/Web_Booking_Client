@@ -1,0 +1,33 @@
+.HomeFrom {
+  width: auto;
+  padding: 24px 0;
+  background: rgb(6, 6, 154);
+  height: 250px;
+  text-align: center;
+}
+
+.HomeFrom h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.HomeFrom h2 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 16px;
+}
+.HomeFrom input {
+  width: 20%;
+  height: 48px;
+  border-radius: 12px;
+  margin-right: 12px;
+  padding-left: 24px;
+}
+.HomeFrom button {
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgb(38, 120, 243);
+  color: white;
+  border: none;
+}
