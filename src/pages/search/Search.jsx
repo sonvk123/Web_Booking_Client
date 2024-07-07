@@ -31,10 +31,16 @@ const Search = () => {
 
   const [datas, setDatas] = useState([]);
 
+  
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   const fetch_api = async (searchData) => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/search", {
+      const response = await fetch(`${url}search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

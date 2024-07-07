@@ -51,6 +51,11 @@ const Detail = () => {
   const [Rooms, setRooms] = useState(null);
   const [payment, setPayment] = useState("Select");
 
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   // lấy dữ liệu về khách sạn theo hotelID
   const { hotel, rooms, error, loading } = useSearch("Detail", hotelID, "get");
 
@@ -73,7 +78,7 @@ const Detail = () => {
 
   // lưu thông tin Transaction
   const post_data = async (sendData) => {
-    const res = await fetch("http://localhost:5000/saveTransaction", {
+    const res = await fetch(`${url}saveTransaction`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -120,9 +125,9 @@ const Detail = () => {
 
   // khi nhấn nút Reserve Now
   const ReserveNow = () => {
-    if(!isLogin){
-      window.alert('Vui lòng đăng nhập để tiếp tục')
-      return
+    if (!isLogin) {
+      window.alert("Vui lòng đăng nhập để tiếp tục");
+      return;
     }
     if (!Rooms.selectedRooms.length || Rooms.selectedRooms.length === 0) {
       window.alert("vui lòng chọn ít nhất một phòng");

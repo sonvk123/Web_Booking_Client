@@ -14,11 +14,17 @@ const HomeImage = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   useEffect(() => {
     const fetch_api = async () => {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:5000/");
+        const res = await fetch(url);
         const data = await res.json();
         setData(true);
         setHotels_city(data.data.hotels_city);

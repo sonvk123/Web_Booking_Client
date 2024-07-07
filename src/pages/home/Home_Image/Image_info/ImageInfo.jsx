@@ -2,15 +2,17 @@ import React from "react";
 
 import styles from "./ImageInfo.module.css";
 
+let url =
+  process.env.REACT_APP_NODE_ENV === "production"
+    ? `${process.env.REACT_APP_URL_Client}`
+    : "http://localhost:3000/";
+
 const ImageInfo = (props) => {
   return (
     <div className={`${styles["items"]}`}>
       <img src={props.image_url} alt="" className={`${styles["image"]}`} />
       <p>
-        <a
-          className={`${styles["name"]}`}
-          href={`http://localhost:3000/detail/${props.id}`}
-        >
+        <a className={`${styles["name"]}`} href={`${url}detail/${props.id}`}>
           {props.name}
         </a>
       </p>

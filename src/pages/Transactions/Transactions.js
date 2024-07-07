@@ -23,9 +23,16 @@ const Transactions = () => {
 
   const User = LocalStorage("User");
   const userId = User._id;
+
+  
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   useEffect(() => {
     const fetch_api = async () => {
-      const apiUrl = `http://localhost:5000/getTransactions`;
+      const apiUrl = `${url}getTransactions`;
       try {
         const response = await fetch(apiUrl, {
           method: "POST",
@@ -52,7 +59,7 @@ const Transactions = () => {
       }
     };
     fetch_api();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const Content = () => {

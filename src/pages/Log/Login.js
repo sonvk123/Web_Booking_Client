@@ -25,10 +25,16 @@ const Login = () => {
     window.alert(errorMessage);
   };
 
+  
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   const fetch_Log = async (input_Login) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/login`, {
+      const response = await fetch(`${url}login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -9,8 +9,13 @@ export const useSearch = (type, url, method, searchData) => {
     loading: true,
   });
 
+  let urlBe =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   const fetch_api = async (type, url, method, searchData) => {
-    const apiUrl = `http://localhost:5000/search/${url}`;
+    const apiUrl = `${urlBe}search/${url}`;
     try {
       const response = await fetch(
         apiUrl,
@@ -38,7 +43,6 @@ export const useSearch = (type, url, method, searchData) => {
           loading: false,
         });
       } else if (type === "RoomsTime") {
-
         setSearchResult({
           data,
           hotel: [],

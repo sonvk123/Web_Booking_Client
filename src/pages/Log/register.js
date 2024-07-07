@@ -21,10 +21,16 @@ const Register = () => {
     window.alert(errorMessage);
   };
 
+  
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_BE}`
+      : "http://localhost:5000/";
+
   const fetch_Log = async (input_register) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/register`, {
+      const response = await fetch(`${url}register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

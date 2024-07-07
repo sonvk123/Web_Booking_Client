@@ -6,9 +6,14 @@ export const useLog = (input_register, log, click) => {
   const [loading, setLoading] = useState(true);
 
   const fetch_Log = async () => {
+    let url =
+      process.env.REACT_APP_NODE_ENV === "production"
+        ? `${process.env.REACT_APP_URL_BE}`
+        : "http://localhost:5000/";
+
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/${log}`, {
+      const response = await fetch(`${url}${log}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
