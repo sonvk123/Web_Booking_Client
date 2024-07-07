@@ -3,11 +3,10 @@ import React from "react";
 import styles from "./ImageCity.module.css";
 const ImageCity = (props) => {
   const hotels_city = props.data;
+  const url = props.url;
 
-  let url =
-    process.env.REACT_APP_NODE_ENV === "production"
-      ? `${process.env.REACT_APP_URL_BE}`
-      : "http://localhost:5000/";
+  console.log("hotels_city:", hotels_city);
+  console.log("url:", url);
 
   return (
     <>

@@ -14,12 +14,12 @@ const HomeImage = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  
   let url =
     process.env.REACT_APP_NODE_ENV === "production"
       ? `${process.env.REACT_APP_URL_BE}`
       : "http://localhost:5000/";
 
+  console.log("url:", url);
   useEffect(() => {
     const fetch_api = async () => {
       try {
@@ -44,7 +44,7 @@ const HomeImage = (props) => {
       {data && error === null && loading === false ? (
         <div className={`${styles["HomeImage"]}`}>
           <div className={`${[styles["cityes"]]}`}>
-            <ImageCity data={hotels_city} />
+            <ImageCity data={hotels_city} url={url} />
           </div>
           <h1>Browse by property type</h1>
           <div className={`${styles["type"]}`}>

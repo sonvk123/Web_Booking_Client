@@ -38,9 +38,14 @@ const Navbar = () => {
     }
   }, []);
 
+  let url =
+    process.env.REACT_APP_NODE_ENV === "production"
+      ? `${process.env.REACT_APP_URL_Client}`
+      : "http://localhost:3000/";
+
   // Thay thế URL hiện tại bằng URL mới
   const handleRedirect = () => {
-    window.location.replace("http://localhost:3000");
+    window.location.replace(url);
   };
 
   const click_Login = () => {
