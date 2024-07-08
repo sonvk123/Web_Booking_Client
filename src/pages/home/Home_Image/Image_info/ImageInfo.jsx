@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import styles from "./ImageInfo.module.css";
 
 let url =
@@ -8,13 +10,17 @@ let url =
     : "http://localhost:3000/";
 
 const ImageInfo = (props) => {
+  const navigate = useNavigate();
+
+  const click = () => {
+    navigate(`detail/${props.id}`);
+  };
+
   return (
     <div className={`${styles["items"]}`}>
       <img src={props.image_url} alt="" className={`${styles["image"]}`} />
-      <p>
-        <a className={`${styles["name"]}`} href={`${url}detail/${props.id}`}>
-          {props.name}
-        </a>
+      <p className={`${styles["name"]}`} onClick={click}>
+        {props.name}
       </p>
       <p className={`${styles["city"]}`}>{props.city}</p>
       <p className={`${styles["price"]}`}>
