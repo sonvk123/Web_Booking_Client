@@ -5,9 +5,6 @@ const ImageCity = (props) => {
   const hotels_city = props.data;
   const url = props.url;
 
-  console.log("hotels_city:", hotels_city);
-  console.log("url:", url);
-
   return (
     <>
       <div className={`${styles["items"]}`}>

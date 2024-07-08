@@ -19,8 +19,6 @@ const HomeImage = (props) => {
       ? `${process.env.REACT_APP_URL_BE}`
       : "http://localhost:5000/";
 
-  console.log("url:", url);
-
   useEffect(() => {
     const fetch_api = async () => {
       try {
